@@ -56,4 +56,28 @@ func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
 
 //2. Write a method to sort an array of strings so that all the anagrams are next to each other. 
 
+//3. Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order. 
+
+//input find: [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]
+
+//ouput: 8 (the index of 5 in the array)
+
+//Could use a simple counter method to find whatever value we are looking for 
+
+//First Method 
+
+func findIndexOfElementIn(element: Int, array: [Int]) -> Int {
+    
+    var place = Int()
+    
+    for i in 0..<array.count {
+    
+        if array[i] == element {
+            place = i
+        }
+    }
+    return place
+}
+
+//second method 
 
