@@ -11,14 +11,11 @@ var str = "Hello, playground"
 //Classic Merge Sort Problem 
 
 func mergeSort(_ array: [Int]) -> [Int] {
+    
     guard array.count > 1 else { return array }
-    
     let middleIndex = array.count / 2
-    
     let leftArray = mergeSort(Array(array[0..<middleIndex]))
-    
     let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
-    
     return merge(leftPile: leftArray, rightPile: rightArray)
 }
 
@@ -27,9 +24,7 @@ func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
     var leftIndex = 0
     var rightIndex = 0
     
-   
     var orderedPile = [Int]()
-    
     
     while leftIndex < leftPile.count && rightIndex < rightPile.count {
         if leftPile[leftIndex] < rightPile[rightIndex] {
@@ -46,7 +41,6 @@ func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
         }
     }
     
-  
     while leftIndex < leftPile.count {
         orderedPile.append(leftPile[leftIndex])
         leftIndex += 1
