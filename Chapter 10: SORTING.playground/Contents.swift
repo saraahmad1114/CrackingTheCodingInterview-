@@ -56,6 +56,8 @@ func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
 
 //2. Write a method to sort an array of strings so that all the anagrams are next to each other. 
 
+//**Key = Anagram - are words that have different arrangements but same number of letters and the same letters 
+
 //3. Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order. 
 
 //input find: [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14]
@@ -82,4 +84,4 @@ func findIndexOfElementIn(element: Int, array: [Int]) -> Int {
 //second method 
 
 
-//4. You are given an array-like data structure Listy which lacks a size method. It does, however, have an elementAt(i) method that returns the element at index i in O(1) time. If i is beyond the bounds of the data structure, it returns -1. (For this reason, the data structure only supports positive integers.) Given a Listy which contains sorted, positive integers, find the index at which an element x occurs. If x occurs multiple times, you may return any index. 
+//4. You are given an array-like data structure Listy which lacks a size method. It does, however, have an elementAt(i) method that returns the element at index i in O(1) time. If i is beyond the bounds of the data structure, it returns -1. (For this reason, the data structure only supports positive integers.) Given a Listy which contains sorted, positive integers, find the index at which an element x occurs. If x occurs multiple times, you may return any index.
