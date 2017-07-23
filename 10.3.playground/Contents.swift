@@ -50,7 +50,7 @@ binarySearch(array, key: 5, range: 0..<array.count)
 
 //An iterative implementation of binary search in Swift:
 
-func binarySearch<T: Comparable>(_ a: [T], key: T) -> Int? {
+func binarySearch2<T: Comparable>(_ a: [T], key: T) -> Int? {
     var lowerBound = 0
     var upperBound = a.count
     while lowerBound < upperBound {
@@ -65,6 +65,9 @@ func binarySearch<T: Comparable>(_ a: [T], key: T) -> Int? {
     }
     return nil
 }
+
+binarySearch(array, key: 5, range: 0..<array.count)
+
 
 
 
