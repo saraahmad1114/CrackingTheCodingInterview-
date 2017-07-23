@@ -66,6 +66,8 @@ func binarySearch2<T: Comparable>(_ a: [T], key: T) -> Int? {
     return nil
 }
 
+binarySearch2(array, key: 5)
+
 binarySearch(array, key: 5, range: 0..<array.count)
 
 //another way
