@@ -12,14 +12,14 @@ var str = "Hello, playground"
 
 //In terms of big O notation = would be O(n)
 
-func indexOfElementIn(array: [Int], element: Int) ->Int{
+func indexOfElementIn(array: [Int], element: Int) ->Int?{
 
     for i in 0..<array.count {
         if element == array[i]{
             return i
         }
     }
-    return -1
+    return nil
 }
 
 //Recursive implementation of binary search, which would be faster here: 
@@ -68,6 +68,17 @@ func binarySearch2<T: Comparable>(_ a: [T], key: T) -> Int? {
 
 binarySearch(array, key: 5, range: 0..<array.count)
 
+//another way
+
+func findIndexOfIn(array: [Int], key: Int) -> Int? {
+    
+    if let i = array.index(of: key) {
+        return i
+    }
+    return nil
+}
+
+findIndexOfIn(array: array, key: 5)
 
 
 
