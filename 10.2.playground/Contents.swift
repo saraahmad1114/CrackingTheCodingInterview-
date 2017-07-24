@@ -43,5 +43,18 @@ func appendAllDictionaries (array: [String]) -> [[String:[String:Int]]]{
 
 //sort the based on whether they are anagrams and get them next to each other 
 
+func sortFrequenceDictionary (array: [String]) -> [String]{
+
+    var newArray = [String]()
+    
+    var frequencyArray = appendAllDictionaries(array: array)
+    
+    
+    return newArray
+
+}
+
+
+
 
 
