@@ -28,17 +28,20 @@ func createFrequencyTable (word: String) -> [String: Int]{
 
 //create an array of frequency dictionaries 
 
-func appendAllDictionaries (array: [String]) -> [[String:Int]]{
+func appendAllDictionaries (array: [String]) -> [[String:[String:Int]]]{
     
-    var frequencyArray = [[String: Int]]()
+    var frequencyArray = [[String:[String: Int]]]()
     
     for word in array {
-        var dictionary = createFrequencyTable(word: word)
-        frequencyArray.append(dictionary)
+        var firstDictionary = createFrequencyTable(word: word)
+        var secondDictionary = [word:firstDictionary]
+        
+        frequencyArray.append(secondDictionary)
     }
     return frequencyArray
 }
 
+//sort the based on whether they are anagrams and get them next to each other 
 
 
 
