@@ -26,17 +26,19 @@ func createFrequencyTable (word: String) -> [String: Int]{
     
 }
 
+//create an array of frequency dictionaries 
 
-func putAnagramsTogether (array : [String]) -> [String]{
-
-    guard array.count > 1 else {return array}
+func appendAllDictionaries (array: [String]) -> [[String:Int]]{
     
-    var newArray = [String]()
+    var frequencyArray = [[String: Int]]()
     
-    
-    
-    return newArray
-
+    for word in array {
+        var dictionary = createFrequencyTable(word: word)
+        frequencyArray.append(dictionary)
+    }
+    return frequencyArray
 }
+
+
 
 
