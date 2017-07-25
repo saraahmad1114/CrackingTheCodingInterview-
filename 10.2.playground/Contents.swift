@@ -48,8 +48,7 @@ func sortFrequenceDictionary (array: [String]) -> [String]{
     var newArray = [String]()
     
     var frequencyArray = appendAllDictionaries(array: array)
-    
-    
+        
     return newArray
 
 }
