@@ -31,8 +31,18 @@ func areStringsPermutations (str1: String, str2: String) -> Bool{
     return frequencyDictionary(str1: str1) == frequencyDictionary(str1: str2)
 }
 
-//1.3 - Write a method to replace all spaces in a string with '%20  You may assume that the string has suf cient space at the end to hold the additional characters,and that you are given the "true" length of the string. (Note: If implementing in Java,please use a character array so that you can perform this operation in place.)
+//1.3 - Write a method to replace all spaces in a string with '%20  You may assume that the string has sufficient space at the end to hold the additional characters,and that you are given the "true" length of the string. (Note: If implementing in Java,please use a character array so that you can perform this operation in place.)
 
 //EXAMPLE
 //Input: "Mr John Smith ", 13 Output: "Mr%20John%20Smith"
+
+func removeSpacesWith (str1: String) -> String {
+    
+    var newString = String()
+    newString = str1.replacingOccurrences(of: " ", with: "%20")
+    return newString
+
+}
+
+
 
