@@ -58,7 +58,17 @@ func isStringPermutationOfPalindrome(str1: String, str2: String) -> Bool {
 
 //1.5 - There are three types of edits that can be performed on strings; insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away. 
 
-//1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z). 
+func editsTo (str1: String, str2: String) ->  Bool{
+
+    //insertion
+    if str1.characters.count == str2.characters.count + 1 {
+        return frequencyDictionary(str1: str1).count == frequencyDictionary(str1: str2).count + 1
+    }
+    
+    return false
+}
+
+//1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z).
 
 
 
