@@ -10,6 +10,32 @@ func areStringsUnique (str1: String) -> Bool {
     return str1.characters.count == Set(str1.characters).count
 }
 
+//Another way to do the above question
+
+func determineUniqueness (of str1: String) -> Bool {
+    
+    var dictionary = [String: Int]()
+    
+    for char in str1.characters {
+        var newChar = String(char)
+        if dictionary[newChar] != nil {
+            dictionary[newChar]! += 1
+        } else {
+            dictionary[newChar] = 1
+        }
+    }
+    
+    var valuesArray = Array(dictionary.values)
+    for i in 0..<valuesArray.count {
+        if valuesArray[i] >= 2 {
+            return false
+        }
+    }
+    
+    return true
+
+}
+
 //1.2 - Given two strings,write a method to decide if one is a permutation of the other
 func frequencyDictionary (str1: String) -> [String: Int]{
 
@@ -30,6 +56,10 @@ func frequencyDictionary (str1: String) -> [String: Int]{
 func areStringsPermutations (str1: String, str2: String) -> Bool{
     return frequencyDictionary(str1: str1) == frequencyDictionary(str1: str2)
 }
+
+areStringsPermutations(str1: "nala", str2: "simba")
+
+areStringsPermutations(str1: "add", str2: "dad")
 
 //1.3 - Write a method to replace all spaces in a string with '%20  You may assume that the string has sufficient space at the end to hold the additional characters,and that you are given the "true" length of the string.
 
