@@ -78,9 +78,7 @@ func removeSpacesWith (str1: String) -> String {
 //1.4 - Given a string, write a function to check if it is a permutation of a palin­drome. A palindrome is a word or phrase that is the same  rwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
 
 func isStringPermutationOfPalindrome(str1: String, str2: String) -> Bool {
-
     if String(str1.characters) == String(str1.characters.reversed()){
-        
         if frequencyDictionary(str1: str1) == frequencyDictionary(str1: str2){
             return true
         }
@@ -93,15 +91,41 @@ isStringPermutationOfPalindrome(str1: "anna", str2: "nana")
 
 //1.5 - There are three types of edits that can be performed on strings; insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away. 
 
-func editsTo (str1: String, str2: String) ->  Bool{
+func isThereAnInsertion(str1: String, str2: String) -> (Bool, String){
+    var sameCounter = 0
+    
+    for char in str1.characters {
+        if str2.characters.contains(char){
+            sameCounter += 1
+            print("\(sameCounter)")
+        }
+    }
+    
+    if sameCounter == str1.characters.count {
+        return (true, "Insertion")
+    }
+    return (false, "No Insertion")
+}
+
+
+func editsTo (str1: String, str2: String) ->  (Bool, String){
 
     //insertion
     if str1.characters.count == str2.characters.count + 1 {
-        return frequencyDictionary(str1: str1).count == frequencyDictionary(str1: str2).count + 1
+        return isThereAnInsertion(str1: str1, str2: str2)
     }
     
-    return false
+    return (false, "No edits")
 }
+
+isThereAnInsertion(str1: "sale", str2: "sales")
+
+//returns true
+
+editsTo(str1: "sale", str2: "sales")
+
+//returning false 
+
 
 //1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z).
 
