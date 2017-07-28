@@ -71,20 +71,25 @@ func removeSpacesWith (str1: String) -> String {
     //var newString = String()
     //newString = str1.replacingOccurrences(of: " ", with: "%20")
     return str1.replacingOccurrences(of: " ", with: "%20")
-
 }
+
+
 
 //1.4 - Given a string, write a function to check if it is a permutation of a palin­drome. A palindrome is a word or phrase that is the same  rwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
 
 func isStringPermutationOfPalindrome(str1: String, str2: String) -> Bool {
 
-    if String(str1.characters) == String(str2.characters.reversed()){
+    if String(str1.characters) == String(str1.characters.reversed()){
+        
         if frequencyDictionary(str1: str1) == frequencyDictionary(str1: str2){
             return true
         }
     }
     return false
 }
+
+isStringPermutationOfPalindrome(str1: "anna", str2: "nana")
+
 
 //1.5 - There are three types of edits that can be performed on strings; insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away. 
 
