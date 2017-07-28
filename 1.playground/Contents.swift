@@ -68,9 +68,9 @@ areStringsPermutations(str1: "add", str2: "dad")
 
 func removeSpacesWith (str1: String) -> String {
     
-    var newString = String()
-    newString = str1.replacingOccurrences(of: " ", with: "%20")
-    return newString
+    //var newString = String()
+    //newString = str1.replacingOccurrences(of: " ", with: "%20")
+    return str1.replacingOccurrences(of: " ", with: "%20")
 
 }
 
