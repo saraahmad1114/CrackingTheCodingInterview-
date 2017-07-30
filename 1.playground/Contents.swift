@@ -256,9 +256,49 @@ func compress(input: String) -> String {
 
 //1.7 - Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
-//1.8 - Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+//1.8 - Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 1.
 
-//1.9 - Assumeyou have a method isSubstringwhich checks if one word is a substring of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
+func markRowAndColumn(input: [[Int]]) -> [[Int]] {
+    
+    var matrix: [[Int]] = input
+    let M: Int = matrix.first!.count
+    let N: Int = matrix.count
+    var coordinates: [[Int]] = []
+    
+    for y in 0..<N {
+        for x in 0..<M {
+            if matrix[y][x] == 1 {
+                coordinates.append([x, y])
+            }
+        }
+    }
+    
+    for coord in coordinates {
+        let x = coord.first!
+        let y = coord.last!
+        
+        for i in 0..<M {
+            matrix[y][i] = 1
+        }
+        
+        for j in 0..<N {
+            matrix[j][x] = 1
+        }
+    }
+    return matrix
+}
+
+var map: [[Int]] = [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+
+let output = (markRowAndColumn(input: map))
+
+for row in 0..<output.count {
+    print(output[row])
+}
+
+//1.9 - Assume you have a method isSubstringwhich checks if one word is a substring of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
 
 func isSubstring (str1: String) -> Bool {
 
@@ -270,6 +310,8 @@ func isSubstring (str1: String) -> Bool {
 isSubstring(str1: "erbottlewat")
 
 //returns true 
+
+
 
 
 
