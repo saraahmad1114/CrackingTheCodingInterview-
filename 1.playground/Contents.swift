@@ -142,6 +142,31 @@ editsTo(str1: "sale", str2: "sales")
 //1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z).
 
 
+func stringCompression(input: String) -> String {
+    var currentLetter: Character?
+    var returnValue = ""
+    var letterCounter = 0
+    
+    for letter in input.characters {
+        if letter == currentLetter {
+            letterCounter += 1
+        } else {
+            if let current = currentLetter {
+                returnValue.append("\(current)\(letterCounter)")
+            }
+            currentLetter = letter
+            letterCounter = 1
+        }
+    }
+    if let current = currentLetter {
+        returnValue.append("\(current)\(letterCounter)")
+    }
+    return returnValue
+}
+
+
+//second solution
+
 func compress(input: String) -> String {
     var returnValue = ""
     var letterCounter = 0
