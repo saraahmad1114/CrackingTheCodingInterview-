@@ -272,7 +272,6 @@ func markRowAndColumn(input: [[Int]]) -> [[Int]] {
             }
         }
     }
-    
     for coord in coordinates {
         let x = coord.first!
         let y = coord.last!
