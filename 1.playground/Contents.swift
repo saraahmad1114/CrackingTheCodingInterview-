@@ -107,13 +107,25 @@ func isThereAnInsertion(str1: String, str2: String) -> (Bool, String){
     return (false, "No Insertion")
 }
 
+func isThereARemoval(str1: String, str2: String) -> (Bool, String){
+    
+    return (false, "No Removal")
+}
+
 
 func editsTo (str1: String, str2: String) ->  (Bool, String){
 
     //insertion
-    if str1.characters.count == str2.characters.count + 1 {
+    if str1.characters.count + 1 == str2.characters.count {
         return isThereAnInsertion(str1: str1, str2: str2)
     }
+    
+    //removal
+    else if str1.characters.count - 1 == str2.characters.count {
+        return isThereARemoval (str1: str1, str2: str2)
+    }
+    
+    //remove a character
     
     return (false, "No edits")
 }
@@ -124,7 +136,7 @@ isThereAnInsertion(str1: "sale", str2: "sales")
 
 editsTo(str1: "sale", str2: "sales")
 
-//returning false 
+//returning false
 
 
 //1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z).
