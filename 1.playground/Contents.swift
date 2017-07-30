@@ -141,6 +141,45 @@ isThereARemoval(str1: "bake", str2: "be")
 
 //returns false
 
+func isThereAReplacement (str1: String, str2: String) -> (Bool, String){
+
+    var sameCounter = 0
+    
+    for char in str2.characters {
+        if str1.characters.contains(char){
+            sameCounter += 1
+            print("\(sameCounter)")
+        }
+    }
+    
+    if (sameCounter + 1  == str1.characters.count) && (str2.characters.count == sameCounter + 1){
+        return (true, "Replacement")
+    }
+    
+    return (false, "Replacement")
+    
+}
+
+isThereAReplacement(str1: "sake", str2: "bake")
+
+//returns true 
+
+isThereAReplacement(str1: "sale", str2: "bale")
+
+//returns true 
+
+isThereAReplacement(str1: "sara", str2: "zara")
+
+//returns true 
+
+isThereAReplacement(str1: "sara", str2: "zero")
+
+//returns false 
+
+
+
+
+
 
 func editsTo (str1: String, str2: String) ->  (Bool, String){
 
