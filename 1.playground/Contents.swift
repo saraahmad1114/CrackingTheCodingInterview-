@@ -256,6 +256,10 @@ func compress(input: String) -> String {
 
 //1.7 - Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
+//1.8 - Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+
+//1.9 - Assumeyou have a method isSubstringwhich checks if one word is a substring of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
+
 
 
 
