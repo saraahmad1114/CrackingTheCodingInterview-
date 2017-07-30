@@ -127,7 +127,15 @@ func isThereARemoval(str1: String, str2: String) -> (Bool, String){
 
 isThereARemoval(str1: "sale", str2: "sle")
 
+//returns true
+
 isThereARemoval(str1: "bake", str2: "bke")
+
+//returns true
+
+isThereARemoval(str1: "bake", str2: "be")
+
+//returns false 
 
 
 func editsTo (str1: String, str2: String) ->  (Bool, String){
