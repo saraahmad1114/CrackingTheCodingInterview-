@@ -107,6 +107,10 @@ func isThereAnInsertion(str1: String, str2: String) -> (Bool, String){
     return (false, "No Insertion")
 }
 
+isThereAnInsertion(str1: "sale", str2: "sales")
+
+//returns true
+
 func isThereARemoval(str1: String, str2: String) -> (Bool, String){
     
     var sameCounter = 0
@@ -135,7 +139,7 @@ isThereARemoval(str1: "bake", str2: "bke")
 
 isThereARemoval(str1: "bake", str2: "be")
 
-//returns false 
+//returns false
 
 
 func editsTo (str1: String, str2: String) ->  (Bool, String){
@@ -151,15 +155,12 @@ func editsTo (str1: String, str2: String) ->  (Bool, String){
     }
     
     else if str1.characters.count == str2.characters.count {
-        
+        return isThereAReplacement(str1: str1, str2: str2)
     }
     
     return (false, "No edits")
 }
 
-isThereAnInsertion(str1: "sale", str2: "sales")
-
-//returns true
 
 editsTo(str1: "sale", str2: "sales")
 
