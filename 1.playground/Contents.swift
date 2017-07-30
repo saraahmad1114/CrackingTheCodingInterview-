@@ -109,8 +109,25 @@ func isThereAnInsertion(str1: String, str2: String) -> (Bool, String){
 
 func isThereARemoval(str1: String, str2: String) -> (Bool, String){
     
+    var sameCounter = 0
+    
+    for char in str2.characters {
+        if str1.characters.contains(char){
+            sameCounter += 1
+            print("\(sameCounter)")
+        }
+    }
+    
+    if sameCounter + 1  == str1.characters.count {
+        return (true, "Removal")
+    }
+    
     return (false, "No Removal")
 }
+
+isThereARemoval(str1: "sale", str2: "sle")
+
+isThereARemoval(str1: "bake", str2: "bke")
 
 
 func editsTo (str1: String, str2: String) ->  (Bool, String){
@@ -125,7 +142,9 @@ func editsTo (str1: String, str2: String) ->  (Bool, String){
         return isThereARemoval (str1: str1, str2: str2)
     }
     
-    //remove a character
+    else if str1.characters.count == str2.characters.count {
+        
+    }
     
     return (false, "No edits")
 }
@@ -166,7 +185,7 @@ func stringCompression(input: String) -> String {
 }
 
 
-//second solution - More concise 
+//second solution - More concise
 
 func compress(input: String) -> String {
     var returnValue = ""
