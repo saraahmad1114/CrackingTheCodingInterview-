@@ -260,6 +260,17 @@ func compress(input: String) -> String {
 
 //1.9 - Assumeyou have a method isSubstringwhich checks if one word is a substring of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
 
+func isSubstring (str1: String) -> Bool {
+
+    var string = str1 + str1
+    
+    return string.contains(str1)
+}
+
+isSubstring(str1: "erbottlewat")
+
+//returns true 
+
 
 
 
