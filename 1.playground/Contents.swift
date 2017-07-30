@@ -209,6 +209,10 @@ editsTo(str1: "bake", str2: "sake")
 
 //returns true - Replacement 
 
+editsTo(str1: "sara", str2: "rukhsana")
+
+//false - No edits 
+
 //1.6 - Implement a method to peform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5c3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase (a - z).
 
 //first solution
