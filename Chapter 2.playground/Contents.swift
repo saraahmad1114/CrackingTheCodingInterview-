@@ -10,6 +10,8 @@ var str = "Hello, playground"
 //FOLLOW UP
 //How would you solve this problem if a temporary buffer is not allowed?
 
+//Linked list - have two components, a value and then a pointer (or address) to points to the next node. 
+
 
 
 

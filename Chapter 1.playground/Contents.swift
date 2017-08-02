@@ -256,7 +256,27 @@ func compress(input: String) -> String {
 
 //1.7 - Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
-
+//public static void rotateM(int M[][],int N){
+//    for( int layer = 0; layer <= N/2; layer++){
+//        int last = N - 1 - layer;
+//        for(int i = layer; i < last; i++){
+//            int offset =  i - layer;
+//            
+//            // top
+//            int temp = M[layer][i];
+//            // top = left
+//            M[layer][i] = M[last - offset][layer];
+//            // left = buttom
+//            M[last - offset][layer]  = M[last][last-offset];
+//            // bottom = right
+//            M[last][last - offset] = M[layer + offset][last];
+//            // right = top
+//            M[layer + offset][last] = temp;
+//            
+//        }
+//    }
+//    
+//}
 
 //1.8 - Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 1.
 
