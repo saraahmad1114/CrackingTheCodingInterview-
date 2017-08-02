@@ -13,5 +13,7 @@ var str = "Hello, playground"
 //Linked list - have two components, a value and then a pointer (or address) to points to the next node. 
 
 
+//2.2 - Return Kth to Last: Implement an algorithm to  nd the kth to last element of a singly linked list.
+
 
 
