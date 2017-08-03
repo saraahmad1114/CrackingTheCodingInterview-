@@ -7,8 +7,71 @@ var str = "Hello, playground"
 //Chapter 2 
 
 //2.1 - Remove Duplicates: Write code to remove duplicates from an unsorted linked list.
-//FOLLOW UP
-//How would you solve this problem if a temporary buffer is not allowed?
+
+class Node : CustomStringConvertible {
+    
+    var value: Int
+    var next: Node?
+    var description: String {
+        if next != nil {
+            return "(\(value)) -> \(next!)"
+        } else {
+            return "(\(value)) -> \(next)"
+        }
+    }
+    
+    init(value: Int) {
+        self.value = value
+    }
+}
+
+
+func removeDups(head: Node?) -> Node? {
+    
+    var current = head
+    var stableNode = head
+    // var dict: [Int: Int] = [:]
+    var set: Set<Int> = []
+    
+    //    while current != nil {
+    //        if dict[current!.value] == nil {
+    //            dict[current!.value] = 1
+    //            stableNode = current!
+    //        } else {
+    //            stableNode!.next = current!.next
+    //        }
+    //        current = current!.next
+    //    }
+    
+    while current != nil {
+        
+        if set.insert(current!.value).inserted {
+            stableNode = current!
+        } else {
+            stableNode!.next = current!.next
+        }
+        
+        current = current!.next
+    }
+    
+    return head
+}
+
+
+// generate data
+let h = Node.init(value: 1)
+var current = h
+for i in 0..<30 {
+    let randomValue = Int(arc4random_uniform(10))
+    current.next = Node.init(value: randomValue)
+    current = current.next!
+}
+
+print(h)
+
+print(removeDups(head: h))
+
+
 
 //Linked list - have two components, a value and then a pointer (or address) to points to the next node. 
 
