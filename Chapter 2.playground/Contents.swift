@@ -30,18 +30,8 @@ func removeDups(head: Node?) -> Node? {
     
     var current = head
     var stableNode = head
-    // var dict: [Int: Int] = [:]
-    var set: Set<Int> = []
     
-    //    while current != nil {
-    //        if dict[current!.value] == nil {
-    //            dict[current!.value] = 1
-    //            stableNode = current!
-    //        } else {
-    //            stableNode!.next = current!.next
-    //        }
-    //        current = current!.next
-    //    }
+    var set: Set<Int> = []
     
     while current != nil {
         
@@ -71,12 +61,9 @@ print(h)
 
 print(removeDups(head: h))
 
-
-
-//Linked list - have two components, a value and then a pointer (or address) to points to the next node. 
-
-
 //2.2 - Return Kth to Last: Implement an algorithm to  nd the kth to last element of a singly linked list.
+
+
 
 
 
