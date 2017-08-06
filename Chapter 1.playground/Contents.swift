@@ -289,7 +289,7 @@ func markRowAndColumn(input: [[Int]]) -> [[Int]] {
     
     for y in 0..<N {
         for x in 0..<M {
-            if matrix[y][x] == 1 {
+            if matrix[y][x] == 0 {
                 coordinates.append([x, y])
             }
         }
