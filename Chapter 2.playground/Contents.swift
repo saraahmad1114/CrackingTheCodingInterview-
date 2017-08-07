@@ -63,6 +63,8 @@ print(removeDups(head: h))
 
 //2.2 - Return Kth to Last: Implement an algorithm to  nd the kth to last element of a singly linked list.
 
+//the Kth element is the last in the linked list 
+
 
 //2.3 - Implement an algorithm to delete a node in the middle (i.e., any node but the  rst and last node, not necessarily the exact middle) of a singly linked list, given only access to that node.
 
