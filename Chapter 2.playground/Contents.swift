@@ -9,7 +9,6 @@ var str = "Hello, playground"
 //2.1 - Remove Duplicates: Write code to remove duplicates from an unsorted linked list.
 
 class Node : CustomStringConvertible {
-    
     var value: Int
     var next: Node?
     var description: String {
@@ -19,7 +18,6 @@ class Node : CustomStringConvertible {
             return "(\(value)) -> \(next)"
         }
     }
-    
     init(value: Int) {
         self.value = value
     }
@@ -73,25 +71,7 @@ print(removeDups(head: h))
 //2.4 - Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x. If x is contained within the list, the values of x only need to be after the elements less than x (see below). The partition element x can appear anywhere in the "right partition"; it does not need to appear between the left and right partitions.
 
 
-func findMin(number inArray: [Int]) -> Int? {
-    
-    guard inArray.count > 1 else {return nil}
-    
-    var minNumber: Int? = inArray[0]
-    
-    for number in inArray {
-        
-        if number < minNumber! {
-            minNumber = number
-        }
-        
-    }
-    return minNumber!
-}
 
-findMin(number: [-9, -10, 4])
-
-findMin(number: [1, 2, 3, 4])
 
 func findMax (number inArray: [Int]) -> Int? {
     
