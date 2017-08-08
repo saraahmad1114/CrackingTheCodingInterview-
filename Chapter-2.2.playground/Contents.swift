@@ -48,7 +48,7 @@ let h1 = generateList()
 
 //Step: 3
 
-//Count the number of nodes in the linked list 
+//Count the number of nodes in the linked list
 
 func countNodes(head: Node?) -> Int {
     
@@ -103,6 +103,68 @@ countNodes(head: list)
 node(atIndex: 20, forList: list)
 
 //the 21st element is the nil, therefore the Kth element is the 20th element in the linked list 
+
+//Step 5: Value at the Index
+
+func value(atIndex: Int, forList: Node?) -> Int {
+    
+    var current = forList
+    
+    if atIndex >= 0 {
+        for _ in 0..<atIndex {
+            if current == nil {
+                return -1
+            }
+            current = current?.next
+        }
+    } else {
+        return -1
+    }
+    
+    return current!.value
+}
+
+print(list)
+
+//(1) -> (7) -> (0) -> (5) -> (6) -> (7) -> (3) -> (6) -> (8) -> (4) -> (3) -> (5) -> (1) -> (0) -> (0) -> (8) -> (1) -> (3) -> (9) -> (9) -> (7) -> nil
+
+value(atIndex: 20, forList: list)
+
+//returns 7
+
+//Step 6: Kth element from the end 
+
+func fromEnd(offset: Int, forList: Node?) -> Node? {
+    
+    var current = forList
+    var result = forList
+    
+    if offset < 0 {
+        return nil
+    }
+    
+    for _ in 0..<offset {
+        if current == nil {
+            return nil
+        }
+        current = current!.next
+    }
+    
+    
+    while current?.next != nil {
+        current = current!.next
+        result = result!.next
+    }
+    
+    
+    return result
+}
+
+fromEnd(offset: 0, forList: list)
+
+//returns the last element, which is 3
+
+//(1) -> (2) -> (4) -> (4) -> (9) -> (6) -> (7) -> (5) -> (6) -> (4) -> (7) -> (0) -> (1) -> (6) -> (9) -> (7) -> (7) -> (2) -> (3) -> (0) -> (3) -> nil
 
 
 
