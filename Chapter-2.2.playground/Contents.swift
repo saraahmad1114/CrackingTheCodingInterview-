@@ -92,9 +92,11 @@ var list = generateList()
 
 countNodes(head: list)
 
-//counts the number of nodes, so that you know where the nil is at the end of the linked list 
+//counts the number of nodes, so that you know where the nil is at the end of the linked list
 
 node(atIndex: 20, forList: list)
+
+//the 21st element is the nil, therefore the Kth element is the 20th element in the linked list 
 
 
 
