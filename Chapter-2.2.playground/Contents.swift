@@ -44,7 +44,7 @@ let h1 = generateList()
 
 print(h1)
 
-//Step: 3 
+//Step: 3
 
 func countNodes(head: Node?) -> Int {
     
@@ -62,4 +62,41 @@ func countNodes(head: Node?) -> Int {
 countNodes(head: h1)
 
 countNodes(head: nil)
+
+//Step: 4 
+
+//return Kth element
+
+func node(atIndex: Int, forList: Node?) -> Node? {
+    
+    var current = forList
+    
+    if atIndex >= 0 {
+        
+        for _ in 0..<atIndex {
+            if current == nil {
+                return nil
+            }
+            current = current?.next
+        }
+    } else {
+        return nil
+    }
+    
+    return current
+}
+
+var list = generateList()
+
+//generates the list
+
+countNodes(head: list)
+
+//counts the number of nodes, so that you know where the nil is at the end of the linked list 
+
+node(atIndex: 20, forList: list)
+
+
+
+
 
