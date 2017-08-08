@@ -38,3 +38,21 @@ func generateList () -> Node {
 let h1 = generateList()
 
 print(h1)
+
+func countNodes(head: Node?) -> Int {
+    
+    var current = head
+    var counter = 0
+    
+    while current != nil {
+        counter += 1
+        current = current!.next
+    }
+    
+    return counter
+}
+
+countNodes(head: h1)
+
+countNodes(head: nil)
+
