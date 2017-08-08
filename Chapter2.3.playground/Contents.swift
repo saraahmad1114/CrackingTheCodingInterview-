@@ -10,6 +10,24 @@ var str = "Hello, playground"
 //lnput:the node c from the linked lista->b->c->d->e->f
 //Result: nothing is returned, but the new linked list looks likea->b->d->e- >f
 
+//Step 1 
+
+class Node: CustomStringConvertible{
+    
+    var value: Int
+    var next: Node?
+    var description: String{
+        if next != nil {
+            return ("\(value) ->   \(next!)")
+        }
+        else{
+            return ("\(value) ->   \(next!)")
+        }
+    }
+    init(value: Int) {
+        self.value = value
+    }
+}
 
 
 
