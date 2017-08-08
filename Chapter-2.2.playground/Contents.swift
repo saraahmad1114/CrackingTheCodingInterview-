@@ -42,8 +42,6 @@ func generateList () -> Node {
 
 let h1 = generateList()
 
-print(h1)
-
 //Step: 3
 
 func countNodes(head: Node?) -> Int {
@@ -88,6 +86,8 @@ func node(atIndex: Int, forList: Node?) -> Node? {
 
 var list = generateList()
 
+print(list)
+
 //generates the list
 
 countNodes(head: list)
@@ -97,6 +97,8 @@ countNodes(head: list)
 node(atIndex: 20, forList: list)
 
 //the 21st element is the nil, therefore the Kth element is the 20th element in the linked list 
+
+
 
 
 
