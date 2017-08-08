@@ -73,23 +73,7 @@ print(removeDups(head: h))
 
 
 
-func findMax (number inArray: [Int]) -> Int? {
-    
-    guard inArray.count > 1 else {return nil}
-    
-    var maxNumber: Int? = inArray[0]
-    
-    for number in inArray {
-        
-        if number > maxNumber! {
-            maxNumber = number
-        }
-        
-    }
-    return maxNumber!
-}
 
-findMax(number: [10, 1, 6, 80])
 
 
 
