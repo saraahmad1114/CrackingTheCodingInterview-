@@ -7,6 +7,9 @@ var str = "Hello, playground"
 //2.2 - Return Kth to Last: Implement an algorithm to  nd the kth to last element of a singly linked list.
 //the Kth element is the last in the linked list
 
+
+//Step: 1 
+
 class Node: CustomStringConvertible {
 
     var value: Int
@@ -24,6 +27,8 @@ class Node: CustomStringConvertible {
     }
 }
 
+//Step: 2
+
 func generateList () -> Node {
     let head = Node.init(value: 1)
     var current = head
@@ -38,6 +43,8 @@ func generateList () -> Node {
 let h1 = generateList()
 
 print(h1)
+
+//Step: 3 
 
 func countNodes(head: Node?) -> Int {
     
