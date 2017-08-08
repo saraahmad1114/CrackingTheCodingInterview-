@@ -10,6 +10,8 @@ var str = "Hello, playground"
 
 //Step: 1 
 
+//Define the Node Class
+
 class Node: CustomStringConvertible {
 
     var value: Int
@@ -29,6 +31,8 @@ class Node: CustomStringConvertible {
 
 //Step: 2
 
+//Generate the linked list
+
 func generateList () -> Node {
     let head = Node.init(value: 1)
     var current = head
@@ -43,6 +47,8 @@ func generateList () -> Node {
 let h1 = generateList()
 
 //Step: 3
+
+//Count the number of nodes in the linked list 
 
 func countNodes(head: Node?) -> Int {
     
@@ -97,6 +103,8 @@ countNodes(head: list)
 node(atIndex: 20, forList: list)
 
 //the 21st element is the nil, therefore the Kth element is the 20th element in the linked list 
+
+
 
 
 
