@@ -166,6 +166,38 @@ fromEnd(offset: 0, forList: list)
 
 //(1) -> (2) -> (4) -> (4) -> (9) -> (6) -> (7) -> (5) -> (6) -> (4) -> (7) -> (0) -> (1) -> (6) -> (9) -> (7) -> (7) -> (2) -> (3) -> (0) -> (3) -> nil
 
+var arrayOne = [1, 2, 3, 4, 10, 11]
+
+var sum = 0
+
+for i in 0..<arrayOne.count {
+    sum += array[i]
+}
+print(sum)
+
+//example of enumerated
+
+let array = ["Apples", "Peaches", "Plums"]
+
+for (index, item) in array.enumerated() {
+    print("Found \(item) at position \(index)")
+}
+
+func compareChallenges(aliceArray: [Int], bobArray: [Int]) -> (Int, Int){
+    
+    guard aliceArray.count == bobArray.count else {return (0, 0)}
+    
+    var aliceBobPoints = (Int, Int)
+    
+    for (index, item) in aliceArray.enumerated() {
+        if item > bobArray[item]{
+            
+        }
+        
+    
+    }
+
+}
 
 
 
