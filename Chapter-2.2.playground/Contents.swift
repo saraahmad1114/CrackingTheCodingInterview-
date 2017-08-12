@@ -175,7 +175,6 @@ for i in 0..<arrayOne.count {
 }
 print(sum)
 
-
 //func compareChallenges(aliceArray: [Int], bobArray: [Int]) -> (Int, Int){
 //    
 //    guard aliceArray.count == bobArray.count else {return (0, 0)}
@@ -196,30 +195,30 @@ print(sum)
 //    return aliceBobPoints
 //}
 
-func compare (A: [Int], B: [Int]) -> String{
-    
-    var APoints = 0
-    
-    var BPoints = 0
-    
-    for (index, item) in A.enumerated() {
-        if item > B[index]{
-            APoints += 1
-        }
-        else if item < B[index]{
-            BPoints += 1
-        }
-    }
-    
-    return (APoints, BPoints)
-}
-
-var alice = [5, 6, 7]
-var bob = [3, 6, 10]
-
-//compareChallenges(aliceArray: alice, bobArray: bob)
-
-print(compare(A: alice, B: bob))
+//func compare (A: [Int], B: [Int]) -> (){
+//    
+//    var APoints = 0
+//    
+//    var BPoints = 0
+//    
+//    for (index, item) in A.enumerated() {
+//        if item > B[index]{
+//            APoints += 1
+//        }
+//        else if item < B[index]{
+//            BPoints += 1
+//        }
+//    }
+//    
+//    print("\(APoints) \(BPoints)")
+//}
+//
+//var alice = [5, 6, 7]
+//var bob = [3, 6, 10]
+//
+////compareChallenges(aliceArray: alice, bobArray: bob)
+//
+//print(compare(A: alice, B: bob))
 
 
 
