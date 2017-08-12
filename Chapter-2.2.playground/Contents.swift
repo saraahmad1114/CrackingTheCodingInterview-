@@ -171,33 +171,59 @@ var arrayOne = [1, 2, 3, 4, 10, 11]
 var sum = 0
 
 for i in 0..<arrayOne.count {
-    sum += array[i]
+    sum += arrayOne[i]
 }
 print(sum)
 
-//example of enumerated
 
-let array = ["Apples", "Peaches", "Plums"]
+//func compareChallenges(aliceArray: [Int], bobArray: [Int]) -> (Int, Int){
+//    
+//    guard aliceArray.count == bobArray.count else {return (0, 0)}
+//    
+//    var aliceBobPoints : (Int, Int) = (0,0)
+//    
+//    for (index, item) in aliceArray.enumerated() {
+//        if item > bobArray[index]{
+//           aliceBobPoints.0 += 1
+//        }
+//        else if item < bobArray[index]{
+//            aliceBobPoints.1 += 1
+//        }
+//        else {
+//            print("No points")
+//        }
+//    }
+//    return aliceBobPoints
+//}
 
-for (index, item) in array.enumerated() {
-    print("Found \(item) at position \(index)")
-}
-
-func compareChallenges(aliceArray: [Int], bobArray: [Int]) -> (Int, Int){
+func compare (A: [Int], B: [Int]) -> String{
     
-    guard aliceArray.count == bobArray.count else {return (0, 0)}
+    var APoints = 0
     
-    var aliceBobPoints = (Int, Int)
+    var BPoints = 0
     
-    for (index, item) in aliceArray.enumerated() {
-        if item > bobArray[item]{
-            
+    for (index, item) in A.enumerated() {
+        if item > B[index]{
+            APoints += 1
         }
-        
-    
+        else if item < B[index]{
+            BPoints += 1
+        }
     }
-
+    
+    return (APoints, BPoints)
 }
+
+var alice = [5, 6, 7]
+var bob = [3, 6, 10]
+
+//compareChallenges(aliceArray: alice, bobArray: bob)
+
+print(compare(A: alice, B: bob))
+
+
+
+
 
 
 
