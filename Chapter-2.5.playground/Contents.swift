@@ -32,17 +32,6 @@ class Node: CustomStringConvertible{
 }
 
 
-//func generateList () -> Node {
-//    let head = Node.init(value: 1)
-//    var current = head
-//    for _ in 0..<20{
-//        let randomNum = Int (arc4random_uniform(10))
-//        current.next = Node.init(value: randomNum)
-//        current = current.next!
-//    }
-//    return head
-//}
-
 func generateList (num: Int) -> Node {
     
     var stringNum = Array(String(num).characters)
@@ -56,3 +45,5 @@ func generateList (num: Int) -> Node {
     }
     return head
 }
+
+generateList(num: 5667)
