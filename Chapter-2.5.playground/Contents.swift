@@ -31,9 +31,9 @@ class Node: CustomStringConvertible{
     }
 }
 
+//2. Generate the linked list 
 
 func generateList (num: Int) -> Node {
-    
     var stringNum = Array(String(num).characters)
     let head = Node.init(value:Int(String(stringNum.first!))!)
     var current = head
@@ -46,4 +46,4 @@ func generateList (num: Int) -> Node {
     return head
 }
 
-generateList(num: 5667)
+
