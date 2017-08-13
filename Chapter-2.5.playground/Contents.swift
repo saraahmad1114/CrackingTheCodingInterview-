@@ -20,10 +20,10 @@ class Node: CustomStringConvertible{
     var next: Node?
     var description: String{
         if next != nil {
-          return "(\(value) -> \(next!))"
+          return "\(value) -> \(next!)"
         }
         else{
-            return "(\(value) -> \(next))"
+            return "\(value) -> \(next)"
         }
     }
     init(value: Int) {
@@ -46,7 +46,36 @@ func generateList (num: Int) -> Node {
     return head
 }
 
+let list = generateList(num: 716)
+
+//prints 7 -> 1 -> 6 -> nil
+
+
 //3. Reverse the linked list 
+
+func reverseLinkedList (head: Node?) -> Node?{
+
+    var current = head
+    var prev: Node?
+    var next: Node?
+    
+    while current != nil {
+        next = current?.next
+        current?.next = prev
+        prev = current
+        current = next
+    }
+    return prev
+}
+
+reverseLinkedList(head: list)
+
+//prints 6 -> 1 -> 7 -> nil
+
+//4. Get the reversed numbers 
+
+
+
 
 
 
