@@ -73,17 +73,44 @@ let reversedList = reverseLinkedList(head: list)
 
 //4. Get the reversed numbers 
 
-func getValuesFrom (head: Node?) -> Int {
+func getValuesFrom (head: Node?) -> [String] {
 
-    var string = ""
+    var string = [String]()
     var current = head
     
     while current != nil {
-        string += String(describing: current?.value)
+        var stringVal = String(describing: current?.value)
+        string.append(stringVal)
         current = current?.next
     }
+    return string
+}
+
+print(getValuesFrom(head: reversedList))
+
+func addValuesFromLinkedList (firstInt: Int, secondInt: Int) -> Int {
+
+    var sum = 0
+    var firstlist = generateList(num: firstInt)
+    var secondList = generateList(num: secondInt)
     
-    return Int(string)!
+    var firstReversedList = reverseLinkedList(head: firstlist)
+    var secondReversedList = reverseLinkedList(head: secondList)
+    
+    var firstArray = getValuesFrom(head: firstReversedList)
+    var secondArray = getValuesFrom(head: secondReversedList)
+    
+    var firstString = String()
+    var secondString = String()
+
+    for (index, element) in firstArray.enumerated() {
+        firstString += String(element)
+        secondString += String(secondArray[index])
+    }
+    
+    sum = Int(firstString)! + Int(secondString)!
+    
+    return sum
 }
 
 
