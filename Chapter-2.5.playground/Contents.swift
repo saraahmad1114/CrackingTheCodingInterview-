@@ -13,105 +13,73 @@ var str = "Hello, playground"
 //Suppose the digits are stored in forward order. Repeat the above problem. EXAMPLE
 //lnput:(6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295. Output:9 -> 1 -> 2.Thatis,912.
 
-//1. Define the linked list
 
-class Node: CustomStringConvertible{
+class Node {
     var value: Int
     var next: Node?
-    var description: String{
-        if next != nil {
-          return "\(value) -> \(next!)"
+    
+    // init and generator can be the same method
+    init(value: Int) {
+        // store ones place and divide by 10
+        self.value = value % 10
+        var nextValue = value / 10
+        
+        // set up for loop
+        var currentNode = self
+        
+        while nextValue > 0 {
+            // create a new Node
+            // store ones place and divide by 10
+            let next = Node(value: nextValue % 10)
+            nextValue /= 10
+            
+            // make the new Node the next Node
+            currentNode.next = next
+            
+            // set up for next iteration
+            currentNode = next
         }
-        else{
+    }
+}
+
+// make the list printable
+extension Node: CustomStringConvertible {
+    var description: String{
+        if let next = next {
             return "\(value) -> \(next)"
         }
-    }
-    init(value: Int) {
-        self.value = value
+        else {
+            return "\(value) -> nil"
+        }
     }
 }
 
-//2. Generate the linked list
-
-func generateList (num: Int) -> Node {
-    var stringNum = Array(String(num).characters)
-    let head = Node.init(value:Int(String(stringNum.first!))!)
-    var current = head
-    
-    for i in 1..<stringNum.count{
-        let num = Int(String(stringNum[i]))
-        current.next = Node.init(value: num!)
-        current = current.next!
+extension Node {
+    func toValue() -> Int {
+        var place = 10
+        var current = self
+        // add each value and multiply by the place value
+        // first is 1, second 10, third 100, etc.
+        var result = current.value
+        while let next = current.next {
+            result += next.value * place
+            place *= 10
+            current = next
+        }
+        return result
     }
-    return head
 }
 
-let list = generateList(num: 716)
-
-//prints 7 -> 1 -> 6 -> nil
-
-//3. Reverse the linked list 
-
-func reverseLinkedList (head: Node?) -> Node?{
-
-    var current = head
-    var prev: Node?
-    var next: Node?
-    
-    while current != nil {
-        next = current?.next
-        current?.next = prev
-        prev = current
-        current = next
-    }
-    return prev
+func +(lhs: Node, rhs: Node) -> Node {
+    return Node(value: lhs.toValue() + rhs.toValue())
 }
 
-let reversedList = reverseLinkedList(head: list)
+let first = Node(value: 617)
+let second = Node(value: 295)
+print(first)
+print(second)
+print(first + second)
 
-//prints 6 -> 1 -> 7 -> nil
-
-//4. Get the reversed numbers 
-
-func getValuesFrom (head: Node?) -> [String] {
-
-    var string = [String]()
-    var current = head
-    
-    while current != nil {
-        var stringVal = String(describing: current?.value)
-        string.append(stringVal)
-        current = current?.next
-    }
-    return string
-}
-
-print(getValuesFrom(head: reversedList))
-
-func addValuesFromLinkedList (firstInt: Int, secondInt: Int) -> Int {
-
-    var sum = 0
-    var firstlist = generateList(num: firstInt)
-    var secondList = generateList(num: secondInt)
-    
-    var firstReversedList = reverseLinkedList(head: firstlist)
-    var secondReversedList = reverseLinkedList(head: secondList)
-    
-    var firstArray = getValuesFrom(head: firstReversedList)
-    var secondArray = getValuesFrom(head: secondReversedList)
-    
-    var firstString = String()
-    var secondString = String()
-
-    for (index, element) in firstArray.enumerated() {
-        firstString += String(element)
-        secondString += String(secondArray[index])
-    }
-    
-    sum = Int(firstString)! + Int(secondString)!
-    
-    return sum
-}
 
 
 
