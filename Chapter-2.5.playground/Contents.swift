@@ -78,6 +78,7 @@ let first = Node(value: 617)
 let second = Node(value: 295)
 print(first)
 print(second)
+
 print(first + second)
 
 

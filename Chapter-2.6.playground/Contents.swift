@@ -62,11 +62,26 @@ func reverseLinkedList (head: Node?) -> Node?{
     return prev
 }
 
-func isLinkedListPalindrome(number: Int) -> Bool {
-    
-    let head = generateList(num: number)
-    
-    let reversedHead = reverseLinkedList(head: head)
-   
-    return true
-}
+//func isLinkedListPalindrome(number: Int) -> Bool {
+//    
+//    var head = generateList(num: number)
+//    
+//    var currentList = head
+//    
+//    let reversedHead = reverseLinkedList(head: head)
+//    
+//    var notCurrentList = reversedHead
+//    
+//    while currentList != nil {
+//        
+//        if notCurrentList?.value != currentList.value {
+//            return false
+//        }
+//        currentList = currentList.next!
+//        notCurrentList?.next
+//    }
+//   
+//    return true
+//}
+
+
