@@ -20,7 +20,7 @@ class Node: CustomStringConvertible{
             return "\(value) -> \(next!)"
         }
         else {
-            return "\(value) -> \(next!)"
+            return "\(value) -> \(next)"
         }
     }
     init(value: Int) {
@@ -28,10 +28,9 @@ class Node: CustomStringConvertible{
     }
 }
 
-//2. Generate linked list 
+//2. Generate linked list
 
 func generateList (num: Int) -> Node {
-    
     var stringNum = Array(String(num).characters)
     let head = Node.init(value:Int(String(stringNum.first!))!)
     var current = head
@@ -43,5 +42,33 @@ func generateList (num: Int) -> Node {
     }
     return head
 }
+
+let list = generateList(num: 890)
+
+//prints 8 -> 9 -> 0 -> nil
+
+//3. Find value in linked list 
+
+func findValueInLinkedList (num: Int, head: Node?) -> Bool{
+    
+    var current = head
+    
+    while current != nil {
+        if current?.value == num {
+            return true
+        }
+        current = current?.next
+    }
+    return false
+}
+
+findValueInLinkedList(num: 8, head: list)
+
+//returns true
+
+
+
+
+
 
 

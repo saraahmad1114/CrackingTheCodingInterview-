@@ -45,6 +45,8 @@ let listTwo = generateList(num: 506)
 
 //prints 5 -> 0 -> 6 -> nil
 
+let listThree = generateList(num: 999)
+
 //3. Reverse the linked list
 
 func reverseLinkedList (head: Node?) -> Node?{
