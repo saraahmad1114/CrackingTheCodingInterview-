@@ -28,4 +28,18 @@ class Node: CustomStringConvertible{
     }
 }
 
+func generateList (num: Int) -> Node {
+    
+    var stringNum = Array(String(num).characters)
+    let head = Node.init(value:Int(String(stringNum.first!))!)
+    var current = head
+    
+    for i in 1..<stringNum.count{
+        let num = Int(String(stringNum[i]))
+        current.next = Node.init(value: num!)
+        current = current.next!
+    }
+    return head
+}
+
 
