@@ -28,6 +28,8 @@ class Node: CustomStringConvertible{
     }
 }
 
+//2. Generate linked list 
+
 func generateList (num: Int) -> Node {
     
     var stringNum = Array(String(num).characters)
