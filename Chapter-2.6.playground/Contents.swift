@@ -84,3 +84,7 @@ func isLinkedListPalindrome(number: Int) -> Bool {
     return true
 }
 
+isLinkedListPalindrome(number: 707)
+
+
+
