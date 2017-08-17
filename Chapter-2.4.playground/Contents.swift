@@ -9,4 +9,23 @@ var str = "Hello, playground"
 //EXAMPLE
 //Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1[partition=5] Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 
-//1. Define a linked list 
+//1. Define the linked list 
+
+class Node: CustomStringConvertible{
+    
+    var value: Int
+    var next: Node?
+    var description: String{
+        if next != nil {
+            return "\(value) -> \(next!)"
+        }
+        else {
+            return "\(value) -> \(next!)"
+        }
+    }
+    init(value: Int) {
+        self.value = value
+    }
+}
+
+
