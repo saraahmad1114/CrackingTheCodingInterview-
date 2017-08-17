@@ -84,4 +84,19 @@ func reverseLinkedList (head: Node?) -> Node?{
 //    return true
 //}
 
+func isPalindrome (head: Node?) -> Bool {
 
+    var result = true
+    
+    var currentList = head
+    
+    var mirrorHead: Node? = nil
+    
+    while currentList != nil {
+        
+    }
+    
+    return false
+    
+
+}
