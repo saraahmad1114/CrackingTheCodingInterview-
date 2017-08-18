@@ -54,6 +54,7 @@ func findValueInLinkedList (num: Int, head: Node?) -> Bool{
     var current = head
     
     while current != nil {
+        
         if current?.value == num {
             return true
         }
@@ -65,6 +66,27 @@ func findValueInLinkedList (num: Int, head: Node?) -> Bool{
 findValueInLinkedList(num: 8, head: list)
 
 //returns true
+
+func partitionLinkedList (head: Node?, num: Int) -> Node? {
+    
+    var current = head
+    
+    var infront : Node? = nil
+    
+    var inBack : Node? = nil
+    
+    if findValueInLinkedList(num: num, head: current) == true {
+        
+        while current != nil {
+            
+        
+            
+        }
+        
+    }
+    return current
+}
+
 
 
 
