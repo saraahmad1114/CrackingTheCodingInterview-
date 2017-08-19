@@ -83,13 +83,15 @@ func isLinkedListPalindrome(number: Int) -> Bool {
 //        currentList = currentList.next!
 //        notCurrentList?.next
 //    }
-//   
+//
 //    return true
     
-    return false 
+    return currentList && notCurrentList == (lhs: Node, rhs: Node)
+    
 }
 
 isLinkedListPalindrome(number: 890)
+
 
 extension Node{
     static func ==(lhs: Node, rhs: Node) -> Bool {
