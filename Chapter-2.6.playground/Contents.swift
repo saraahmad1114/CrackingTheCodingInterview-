@@ -2,8 +2,6 @@
 
 import UIKit
 
-var str = "Hello, playground"
-
 //Chapter 2- 2.6: Palindrome: Implement a function to check if a linked list is a palindrome.
 
 class Node: CustomStringConvertible{
@@ -90,7 +88,13 @@ func isLinkedListPalindrome(number: Int) -> Bool {
 
 isLinkedListPalindrome(number: 890)
 
+//prints false
+
 isLinkedListPalindrome(number: 909)
+
+//fatal error: unexpectedly found nil while unwrapping an optional value 
+
+//getting an error here
 
 
 extension Node{
