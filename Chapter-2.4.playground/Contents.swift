@@ -43,7 +43,7 @@ func generateList (num: Int) -> Node {
     return head
 }
 
-let list = generateList(num: 890)
+var list = generateList(num: 890)
 
 //prints 8 -> 9 -> 0 -> nil
 
@@ -67,7 +67,7 @@ findValueInLinkedList(num: 8, head: list)
 
 //returns true
 
-func partitionLinkedList (head: Node?, num: Int) -> Node? {
+func partitionLinkedList (head: inout Node?, num: Int) -> Node? {
     
     var current = head
     
@@ -77,13 +77,24 @@ func partitionLinkedList (head: Node?, num: Int) -> Node? {
         
         while current != nil {
             
-        
+            if (current?.value)! < num {
+                
+                current?.next = head
+                head = current
+            }
+            else {
+                tail?.next = current
+                tail = current
+            }
             
+            current = current?.next
         }
         
     }
     return current
 }
+
+
 
 
 
