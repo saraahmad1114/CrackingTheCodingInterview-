@@ -20,10 +20,30 @@ struct Stack {
         array.append(element)
     }
     
-    //popping off the stack 
+    //popping off the stack
     mutating func pop() -> String? {
         return array.popLast()
     }
+    
+    //min function
+    func peek() -> String? {
+        return array.last
+    }
 }
 
+extension Stack: CustomStringConvertible {
+    // 2
+    var description: String {
+        // 3
+        let topDivider = "---Stack---\n"
+        let bottomDivider = "\n-----------\n"
+        
+        // 4
+        let stackElements = array.reversed().joined(separator: "\n")
+        // 5
+        return topDivider + stackElements + bottomDivider
+    }
+}
+
+//Since the interaction with the stack is mostly always with the top element of the stack, this allows us to operate on the O(1) speed.  
 
