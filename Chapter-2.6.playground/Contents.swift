@@ -72,12 +72,12 @@ func isLinkedListPalindrome(number: Int) -> Bool {
     
     var notCurrentList = reversedHead
     
-    while currentList != nil {
+    while currentList != nil && notCurrentList != nil {
         
         if notCurrentList?.value != currentList.value {
-            print("\(notCurrentList?.value) \(currentList.value)")
             return false
         }
+        
         currentList = currentList.next!
         notCurrentList = notCurrentList!.next
     }
