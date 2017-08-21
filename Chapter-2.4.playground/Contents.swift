@@ -71,9 +71,7 @@ func partitionLinkedList (head: Node?, num: Int) -> Node? {
     
     var current = head
     
-    var infront : Node? = nil
-    
-    var inBack : Node? = nil
+    var tail : Node? = head
     
     if findValueInLinkedList(num: num, head: current) == true {
         
