@@ -11,4 +11,4 @@ var str = "Hello, playground"
 
 //4.2 - Given a sorted (increasing order) array with unique integer elements, write an algo­rithm to create a binary search tree with minimal height
 
-//
+//4.3 - Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
