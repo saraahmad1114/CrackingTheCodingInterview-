@@ -8,25 +8,22 @@ var str = "Hello, playground"
 
 //4.1 - Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
-//1. Define the graph
+//1. Define a linked list 
 
-public struct Vertex<T: Hashable> {
-    var data: T
-}
-
-extension Vertex: Hashable {
-    public var hashValue: Int { // 1
-        return "\(data)".hashValue
-    }
+class Node: CustomStringConvertible{
+    var value: Int
+    var next: Node?
     
-    static public func ==(lhs: Vertex, rhs: Vertex) -> Bool { // 2
-        return lhs.data == rhs.data
+    var description: String{
+        if next != nil {
+            return "\(value)->\(next!)"
+        }
+        else {
+            return "\(value)->\(next)"
+        }
     }
-}
-
-extension Vertex: CustomStringConvertible {
-    public var description: String {
-        return "\(data)"
+    init(value: Int) {
+        self.value = value
     }
 }
 
@@ -38,7 +35,7 @@ enum state {
 }
 
 
-//need linked list 
+//need linked list
 
 
 
