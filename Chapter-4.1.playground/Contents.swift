@@ -10,22 +10,22 @@ var str = "Hello, playground"
 
 //1. Define a linked list 
 
-//class Node: CustomStringConvertible{
-//    var value: Int
-//    var next: Node?
-//    
-//    var description: String{
-//        if next != nil {
-//            return "\(value)->\(next!)"
-//        }
-//        else {
-//            return "\(value)->\(next)"
-//        }
-//    }
-//    init(value: Int) {
-//        self.value = value
-//    }
-//}
+class Node: CustomStringConvertible{
+    var value: Int
+    var next: Node?
+    
+    var description: String{
+        if next != nil {
+            return "\(value)->\(next!)"
+        }
+        else {
+            return "\(value)->\(next)"
+        }
+    }
+    init(value: Int) {
+        self.value = value
+    }
+}
 
 enum state {
 
@@ -36,16 +36,6 @@ enum state {
 
 //need linked list
 
-
-class Node<T> {
-    var value: T
-    var leftChild: Node?
-    var rightChild: Node?
-    
-    init(value: T) {
-        self.value = value
-    }
-}
 
 //4.3 - Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
 
