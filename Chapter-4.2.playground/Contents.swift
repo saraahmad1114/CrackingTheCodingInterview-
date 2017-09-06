@@ -15,3 +15,9 @@ class Node<T> {
         self.value = value
     }
 }
+
+//sort the array 
+
+//find the middle value 
+
+//create the root node and then create the binary tree 
