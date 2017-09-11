@@ -27,7 +27,15 @@ var newArray = array.sorted
 
 sortArray(array: numbers)
 
-
 //find the middle value 
+
+//This will serve as the top parent node 
+
+func findMiddleVal (array: [Int]) -> Int {
+    
+    var middleIndex = array.count/2
+    
+    return array[middleIndex]
+}
 
 //create the root node and then create the binary tree 
