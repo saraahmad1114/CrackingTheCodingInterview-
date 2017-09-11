@@ -39,3 +39,17 @@ func findMiddleVal (array: [Int]) -> Int {
 //create the root node and then create the binary tree 
 
 
+//Extension to print out the binary search tree 
+
+extension BinaryTree: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case let .node(left, value, right):
+            return "value: \(value), left = [" + left.description + "], right = [" + right.description + "]"
+        case .empty:
+            return ""
+        }
+    }
+}
+
+
