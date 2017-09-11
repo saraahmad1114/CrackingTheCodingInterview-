@@ -18,6 +18,16 @@ class Node<T> {
 
 //sort the array 
 
+var numbers = [0, 2, 3, 5, 10, 2]
+
+func sortArray (array: [Int]) -> [Int] {
+var newArray = array.sorted
+    return newArray()
+}
+
+sortArray(array: numbers)
+
+
 //find the middle value 
 
 //create the root node and then create the binary tree 
