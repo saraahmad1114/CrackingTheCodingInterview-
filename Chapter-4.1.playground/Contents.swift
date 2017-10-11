@@ -1,116 +1,70 @@
-//: Playground - noun: a place where people can play
+//4.1 - Given a directed graph, design an algorithm to  nd out whether there is a route between two nodes
 
-import UIKit
-
-var str = "Hello, playground"
-
-//Chapter 4 
-
-//4.1 - Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
-
-//1. Define a linked list 
-
-class Node: CustomStringConvertible{
-    var value: Int
-    var next: Node?
-    
-    var description: String{
-        if next != nil {
-            return "\(value)->\(next!)"
-        }
-        else {
-            return "\(value)->\(next)"
-        }
-    }
-    init(value: Int) {
-        self.value = value
-    }
-}
-
-enum state {
-
-    case Unvisited
-    case Visited
-    case Visiting
-}
-
-//need linked list
-
-
-//4.3 - Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
-
-//4.4 - Check Balanced: Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is de ned to be a tree such that the heights of the two subtrees of any node never differ by more than one.
-
-
-
-
-extension Int {
-    var wordForm:String {
-        let numberValue = NSNumber(value: self)
-        var formatter = NumberFormatter()
-        formatter.numberStyle = .spellOut
-        return "\(formatter.string(for: self)!)"
-    }
-}
-
-func printCharNum(number: Int) -> Int{
-    
-    var numberWordCount = 0
-    
-    var containerString = number.wordForm
-    
-    containerString = containerString.replacingOccurrences(of: " ", with: "")
-    
-    if containerString.characters.contains("-"){
-        containerString = containerString.replacingOccurrences(of: "-", with: "")
-        print(containerString)
-        return containerString.characters.count
-    }
-    print(containerString)
-    return containerString.characters.count
-    
-}
-
-//printCharNum(number: 178)
-
-//Another way would be to do the following: if you insist on using the loop
-
-func printCharactersOfNumbers(givenNum: Int) -> Int {
-
-    var containerString = ""
-    var secondContainer = ""
-    var dictionary = [Int: String]()
-    
-    var counter = 0
-    
-    for number in 1...1000 {
+    class GraphNode {
         
-        containerString = number.wordForm.replacingOccurrences(of: " ", with: "")
+        var visited = false
+        var data: Int
+        var nodes: [GraphNode]
         
-        if dictionary[number] == nil {
-            dictionary[number] =  containerString
+        init(data: Int) {
+            self.data = data
+            self.nodes = []
+        }
+        init(data: Int, nodes: GraphNode...) {
+            self.data = data
+            self.nodes = nodes
         }
     }
     
-    print(dictionary)
-  
-    for (key, value) in dictionary {
+func explore(node: GraphNode?, end: GraphNode) -> Bool {
         
-        if key == givenNum {
-            secondContainer = dictionary[key]!
+        if let n = node {
+            if n.visited {
+                return false
+            }
+            n.visited = true
+            if n === end {
+                return true
+            }
+            for next in n.nodes {
+                if explore(node: next, end: end) {
+                    return true
+                }
+            }
         }
+        return false
     }
     
-    secondContainer = secondContainer.replacingOccurrences(of: " ", with: "")
-    if secondContainer.characters.contains("-"){
-        secondContainer = secondContainer.replacingOccurrences(of: "-", with: "")
-        print(secondContainer)
-        return secondContainer.characters.count
+func findRoute(start : GraphNode, end: GraphNode) -> Bool {
+        
+        return explore(node: start, end: end)
     }
-    print(secondContainer)
-    return secondContainer.characters.count
-}
+    
+func exercise2() {
+        
+        let node6 = GraphNode(data: 6)
+        let node5 = GraphNode(data: 5, nodes: node6)
+        let node7 = GraphNode(data: 7)
+        let node3 = GraphNode(data: 3, nodes: node7)
+        let node4 = GraphNode(data: 4, nodes: node7)
+        let node2 = GraphNode(data: 2, nodes: node3, node4, node5)
+        let node1 = GraphNode(data: 1, nodes: node2)
+        let _ = GraphNode(data: 0, nodes: node1, node2)
+        
+        let start = node4
+        let end = node6
+        let res = findRoute(start: start, end: end)
+        print("\(start.data) -> \(end.data): \(res)")
+    
+    }
+    
+public func run() {
+        exercise2()
+    }
 
-printCharactersOfNumbers(givenNum: 750)
+run()
 
+// Implemented my own graph node structure (didn't look into matrix representation of graphs)
+// Solution discards nodes already visited.
+// Since it visits nodes at most once and visits at most all nodes, solution is O(n)
 
