@@ -1,5 +1,7 @@
 //4.1 - Given a directed graph, design an algorithm to  nd out whether there is a route between two nodes
 
+//1. Define the Graph
+
     class GraphNode {
         
         var visited = false
@@ -15,7 +17,9 @@
             self.nodes = nodes
         }
     }
-    
+
+//2. Check if the nodes have been visited or not
+
 func explore(node: GraphNode?, end: GraphNode) -> Bool {
         
         if let n = node {
@@ -39,7 +43,9 @@ func findRoute(start : GraphNode, end: GraphNode) -> Bool {
         
         return explore(node: start, end: end)
     }
-    
+
+//3. Constructing the graph nodes 
+
 func exercise2() {
         
         let node6 = GraphNode(data: 6)
@@ -64,7 +70,6 @@ public func run() {
 
 run()
 
-// Implemented my own graph node structure (didn't look into matrix representation of graphs)
 // Solution discards nodes already visited.
 // Since it visits nodes at most once and visits at most all nodes, solution is O(n)
 
