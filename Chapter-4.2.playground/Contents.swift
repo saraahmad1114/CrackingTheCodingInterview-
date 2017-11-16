@@ -21,7 +21,7 @@ class Node<T> {
 var numbers = [0, 2, 3, 5, 10, 2]
 
 func sortArray (array: [Int]) -> [Int] {
-var newArray = array.sorted
+let newArray = array.sorted
     return newArray()
 }
 
@@ -32,14 +32,35 @@ sortArray(array: numbers)
 //This will serve as the top parent node
 
 func findMiddleVal (array: [Int]) -> Int {
-    var middleIndex = array.count/2
+    let middleIndex = array.count/2
     return array[middleIndex]
 }
 
-//create the root node and then create the binary tree 
+//create the root node and then create the binary tree
+func buildTree(array: [Int], left: Int, right: Int) -> BinaryNode {
+    
+    if (left <= right) {
+        let middle = Int((left + right) / 2)
+        let leftSubtree = buildTree(array: array, left: left, right: middle - 1)
+        let rightSubtree = buildTree(array: array, left: middle + 1, right: right)
+        
+        return BinaryNode(data: array[middle], left: leftSubtree, right: rightSubtree)
+    }
+    return nil
+}
+
+//func exercise3() {
+//    let array = [1, 2, 3, 4, 5, 6, 7]
+//    let tree = buildTree(array: array, left: 0, right: array.count - 1)
+//    inOrder(tree, operation: { (data) in })
+//}
+
+//public func run() {
+//    exercise3()
+//}
 
 
-//Extension to print out the binary search tree 
+
 
 
 
