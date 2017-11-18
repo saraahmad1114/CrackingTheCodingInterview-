@@ -36,6 +36,8 @@ func determineUniqueness (of str1: String) -> Bool {
 
 }
 
+//Comments 
+
 //1.2 - Given two strings,write a method to decide if one is a permutation of the other
 func frequencyDictionary (str1: String) -> [String: Int]{
 
