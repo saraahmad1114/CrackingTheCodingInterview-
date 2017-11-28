@@ -30,7 +30,7 @@ func lengthOfLongestSubstring(string: String) -> Int {
     return longest
 }
 
-lengthOfLongestSubstring(string: "abcabcbb"))
+lengthOfLongestSubstring(string: "abcabcbb")
 
 
 lengthOfLongestSubstring(string: "bbbbb")
